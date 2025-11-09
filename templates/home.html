@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Mindful Moments Journal</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body style="background-image: url(static/bg.png); background-repeat: no-repeat; background-attachment: fixed;">
+        <div style="background-color: #ff7251;">
+            <nav class="navbar navbar-light pb-2">
+                <a class="navbar-brand font-weight-bold" href="#" style="color: #8a004c; font-family: 'Lucida Console', monospace;">Mindful Moments</a>
+            </nav>
+        </div>
+        <div class="container mt-4 mb-4">
+            <h1>Your Daily Reflection</h1>
+            <p>Take a moment to pause and reflect. Your journal is a private space for your thoughts and feelings.</p>
+
+            <div class="card shadow-sm mb-4" style="background-color: #ffe9b0;">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Prompt:</h5>
+                    <p class="card-text font-italic">"{{ prompt }}"</p>
+                    <form action="/submit" method="post">
+                        <div class="form-group">
+                            <textarea class="form-control" name="entry" rows="8" placeholder="Write your thoughts here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Save Entry</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center" style="font-family: 'Lucida Console', monospace;">
+                            <h6>Your Mindfulness Score: <br> {{ score }} points</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container w-75 mt-4 mb-3">
+                <div class="text-center">
+                    <h3>Your Emotional Trends</h3>
+                    <p>Visualize your emotional journey over time based on your entries.</p>
+                    <img src="static/plot.png" class="shadow img-fluid">
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
